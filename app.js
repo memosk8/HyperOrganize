@@ -8,6 +8,25 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+require('./db')
+const Team = require('./models/Team')
+
+/* 
+  const test_team = new Team({
+  team_mgr: "$elManager",
+  team_name: "Los Meros",
+  team_leaders: ["3434","3455","5677"],
+  created_at: new Date().toISOString(),
+  updated_at: null,
+  team_goals: ["$Goal_id_3434", "$Goal_id_3554"],
+  team_channel_log: ["$post_1","$post_2"],
+  team_tasks: ["$task_1","task_2"],
+  team_events: ["$event_1", "event_2"],
+  team_description: "Equipo de trabajo para los meros leros"
+});
+
+test_team.save(); 
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
