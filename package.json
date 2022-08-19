@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
@@ -13,6 +14,7 @@
     "express": "~4.16.1",
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
+    "mongoose": "^6.5.2",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.19",
     "postcss": "^8.4.16",
