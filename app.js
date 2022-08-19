@@ -9,10 +9,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 require('./db')
-const Team = require('./models/Team')
-
 /* 
-  const test_team = new Team({
+
+const Team = require('./models/Team')
+const User = require('./models/User')
+
+
+const test_team = new Team({
   team_mgr: "$elManager",
   team_name: "Los Meros",
   team_leaders: ["3434","3455","5677"],
@@ -25,9 +28,29 @@ const Team = require('./models/Team')
   team_description: "Equipo de trabajo para los meros leros"
 });
 
-test_team.save(); 
-*/
+const team = Team.findOne({}).lean()
 
+const test_usr = new User({
+  user_name: "Juan Mateo",
+	user_last: "Vegas Moras",
+	user_email: "micorreo@tuma.com",
+	user_phone: "11256488",
+	user_team: "$team_id",
+	user_role: "Leader", // [manager,leader,member]
+	state: true,
+	user_tasks: ["task_1","task_2"],
+	user_goals: ["goal_1","goal_2"],
+	immediate_boss: "$user_id",
+	has_events: ["$event_1"],
+	user_comments: ["comment_1"],
+	user_posts: []
+});
+
+test_usr.save(); 
+
+test_team.save(); 
+
+ */
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
