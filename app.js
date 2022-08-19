@@ -9,7 +9,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 require('./db')
-/* 
+
+
 
 const Team = require('./models/Team')
 const User = require('./models/User')
@@ -50,7 +51,8 @@ test_usr.save();
 
 test_team.save(); 
 
- */
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
