@@ -8,13 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-require('./db')
-
-
+require('./db') // ejecuta la conexión a mongodb 
 
 const Team = require('./models/Team')
 const User = require('./models/User')
-
 
 const test_team = new Team({
   team_mgr: "$elManager",
@@ -29,7 +26,8 @@ const test_team = new Team({
   team_description: "Equipo de trabajo para los meros leros"
 });
 
-const team = Team.findOne({}).lean()
+if (team = Team.findOne({team_mgr: "elManager"}))
+  console.log(team.created_at)
 
 const test_usr = new User({
   user_name: "Juan Mateo",
@@ -48,10 +46,7 @@ const test_usr = new User({
 });
 
 test_usr.save(); 
-
 test_team.save(); 
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
